@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MonitoraDiscoController {
-	
-	@RequestMapping("/coleta")
+
+	@RequestMapping("/")
 	public String index() {
-		
+
 		return "index";
 	}
+
 	
 
 }
