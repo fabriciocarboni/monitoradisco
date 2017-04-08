@@ -12,6 +12,10 @@ public class MonitoraDiscoController {
 		return "index";
 	}
 
-	
+	@RequestMapping("/teste")
+	public String teste() {
+
+		return "teste";
+	}
 
 }
