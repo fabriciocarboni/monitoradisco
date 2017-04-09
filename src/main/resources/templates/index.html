@@ -14,13 +14,13 @@
       google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
 
-//     function drawChart() {
+    function drawChart() {
 
-//       var data = new google.visualization.DataTable();
-//       data.addColumn('number', 'Hora');
-//       data.addColumn('number', 'Total de Arquivos');
-//       data.addColumn('number', 'The Avengers');
-//       data.addColumn('number', 'Transformers: Age of Extinction');
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Hora');
+      data.addColumn('number', 'Total de Arquivos não movidos');
+      data.addColumn('number', 'Total de Arquivos coletados');
+      //data.addColumn('number', 'Transformers: Age of Extinction');
 
 //       data.addRows([
 //         [1,  37.8, 80.8, 41.8],
@@ -39,18 +39,25 @@
 //         [14,  4.2,  6.2,  3.4]
 //       ]);
 
-
-// Preciso saber como inserir o array aqui neste formato, pegando os dados de BuildCsv
-
-function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Hora', 'Qt. Arquivos'],
-          ['0:00',  60],
-          ['0:15',  25],
-          ['0:30',  78],
-          ['0:45',  20]
-        ]);
-
+      data.addRows([
+//     	['0:00',  37.8,  2.76],
+//     	['0:15',  30.8,  2.90],
+//     	['0:20',  15.8,  3.10]
+		['00:00',15,0.63],
+		['00:15',25,0.90],
+		['00:30',70,1.15],
+		['00:45',150,1.45],
+		['01:00',7,1.80],
+		['01:15',40,2.63],
+		['01:30',250,3.63],
+		['01:45',400,4.90],
+		['02:00',800,5.60],
+		['02:15',1200,7.90],
+		['02:30',550,8.90],
+		['02:45',120,8.90]    	  
+		]);
+      
+      
       var options = {
         chart: {
           title: 'Coleta - Consumo de dados - DPI',

@@ -31,12 +31,13 @@ public class FileHandle {
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
 				new FileOutputStream(Configuracao.path_monitora_disco + filename_formatted, true), "utf-8"))) {
 
-			// writer.write(DateFormat.FormatDate() + ";" +
-			// DateFormat.FormatHour() + ";" + total_files + ";" +
-			// total_files_size + "\n");
-			writer.write(DateFormat.FormatDate() + ";" + DateFormat.FormatHour() + ";" + total_files + ";"
-					+ total_files_size + System.getProperty("line.separator"));
+			writer.write(//DateFormat.FormatDate() + ";" 
+						DateFormat.FormatHour() + ";" 
+						+ total_files + ";"
+						+ total_files_size 
+						+ System.getProperty("line.separator"));
 
 		}
 	}
+	
 }

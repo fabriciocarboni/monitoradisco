@@ -16,17 +16,30 @@ public class ConvertSize {
 
 		DecimalFormat dec = new DecimalFormat("0.00");
 
+//		if (t > 1) {
+//			hrSize = dec.format(t).concat("TB");
+//		} else if (g > 1) {
+//			hrSize = dec.format(g).concat("GB");
+//		} else if (m > 1) {
+//			hrSize = dec.format(m).concat("MB");
+//		} else if (k > 1) {
+//			hrSize = dec.format(k).concat("KB");
+//		} else {
+//			hrSize = dec.format(b).concat("Bytes");
+//		}
+		
 		if (t > 1) {
-			hrSize = dec.format(t).concat("TB");
+			hrSize = dec.format(t);
 		} else if (g > 1) {
-			hrSize = dec.format(g).concat("GB");
+			hrSize = dec.format(g);
 		} else if (m > 1) {
-			hrSize = dec.format(m).concat("MB");
+			hrSize = dec.format(m);
 		} else if (k > 1) {
-			hrSize = dec.format(k).concat("KB");
+			hrSize = dec.format(k);
 		} else {
-			hrSize = dec.format(b).concat("Bytes");
+			hrSize = dec.format(b);
 		}
+		
 
 		return hrSize;
 
