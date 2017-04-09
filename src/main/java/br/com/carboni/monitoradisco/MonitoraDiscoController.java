@@ -31,7 +31,7 @@ public class MonitoraDiscoController {
 
 		FileHandle.writeToFile(path, fileName, amtofFilesInDir, totalFileSize);
 		
-		StringBuilder chartValues = BuildCsv.buildArray();
+		String chartValues = BuildCsv.buildArray();
 		
 		model.addAttribute("chartValues",chartValues);
 

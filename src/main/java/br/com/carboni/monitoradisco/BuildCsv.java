@@ -7,12 +7,12 @@ import br.com.carboni.utils.FileHandle;
 
 public class BuildCsv {
 
-	public static StringBuilder buildArray() throws Exception {
+	public static String buildArray() throws Exception {
 
 		String path = Configuracao.path_monitora_disco;
 		String currentDate = DateFormat.FormatDate();
 		String filename = currentDate + Configuracao.filename;
-		String header = "['Hora','Qt Arquivos', 'Qt bytes'],";
+//		String header = "['Hora','Qt Arquivos', 'Qt bytes'],";
 		
 		
 		ArrayList<String> chartValues = FileHandle.readFileAsListOfStrings(path, filename);
@@ -34,8 +34,7 @@ public class BuildCsv {
 			sb.append(",");
 			sb.append(totalSize);
 			sb.append("],");
-			
-		
+
 		}
 		
 		sb.deleteCharAt(sb.length()-1);
@@ -47,7 +46,7 @@ public class BuildCsv {
 //		System.out.println(sb);
 //		System.out.println(sb.getClass().getName());
 
-		return sb;
+		return sb.toString();
 
 	}
 
