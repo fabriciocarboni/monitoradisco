@@ -16,17 +16,18 @@ public class ConvertSize {
 
 		DecimalFormat dec = new DecimalFormat("0.00");
 
-//		if (t > 1) {
-//			hrSize = dec.format(t).concat("TB");
-//		} else if (g > 1) {
-//			hrSize = dec.format(g).concat("GB");
-//		} else if (m > 1) {
-//			hrSize = dec.format(m).concat("MB");
-//		} else if (k > 1) {
-//			hrSize = dec.format(k).concat("KB");
-//		} else {
-//			hrSize = dec.format(b).concat("Bytes");
-//		}
+/*		if (t > 1) {
+			hrSize = dec.format(t).concat("TB");
+		} else if (g > 1) {
+			hrSize = dec.format(g).concat("GB");
+		} else if (m > 1) {
+			hrSize = dec.format(m).concat("MB");
+		} else if (k > 1) {
+			hrSize = dec.format(k).concat("KB");
+		} else {
+			hrSize = dec.format(b).concat("Bytes");
+		}
+*/
 		
 		if (t > 1) {
 			hrSize = dec.format(t);
@@ -40,9 +41,10 @@ public class ConvertSize {
 			hrSize = dec.format(b);
 		}
 		
-
+		
+	
 		return hrSize;
 
-	}
+	}	
 
 }
