@@ -38,7 +38,7 @@ public class BuildCsv {
 
 		}
 		
-//		sb.append("]");
+//	    sb.append("]");
 		sb.deleteCharAt(sb.length()-1);
 
 
