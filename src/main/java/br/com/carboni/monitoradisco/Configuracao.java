@@ -15,9 +15,11 @@ public class Configuracao {
 //	public static String path_monitora_disco = "C:\\Users\\A0050969\\workspace\\MonitoracaoDiscoJava\\Arquivos\\";
 	public static String path_monitora_disco = "C:\\Users\\Fabricio\\git\\monitoradisco\\src\\main\\resources\\arquivos\\";
 	public static String work_dir = path_monitora_disco;
-	public static String filename = "_monitora_disco.txt";
+//	public static String filename = "_monitora_disco.txt";
+	public static String filename = "20170409_monitora_disco.txt";
 	public static String path_controle_coleta = path_monitora_disco;
-	public static String fileJaBaixados = "ja_baixados_" + DateFormat.FormatDate() + ".txt";
+//	public static String fileJaBaixados = "ja_baixados_" + DateFormat.FormatDate() + ".txt";
+	public static String fileJaBaixados = "ja_baixados_20170409.txt";
 
 
 

@@ -21,6 +21,7 @@ public class BuildCsv {
 												// it only instantiates a single StringBuilder object outside of the for loop
 //		sb.append(header);
 		
+//		sb.append("[");
 		for (String s : chartValues) {
 			
 			String hr = s.split(";")[0];
@@ -37,14 +38,10 @@ public class BuildCsv {
 
 		}
 		
+//		sb.append("]");
 		sb.deleteCharAt(sb.length()-1);
 
-//    	['0:00',  37.8,  2.76],
-//    	['0:15',  30.8,  2.90],
-//    	['0:20',  15.8,  3.10]
-		
-//		System.out.println(sb);
-//		System.out.println(sb.getClass().getName());
+
 
 		return sb.toString();
 

@@ -34,7 +34,9 @@ public class MonitoraDiscoController {
 		String chartValues = BuildCsv.buildArray();
 		
 		model.addAttribute("chartValues",chartValues);
-
+		
+		System.out.println(chartValues);
+		
 		return "teste2";
 	}
 
