@@ -7,14 +7,8 @@ import br.com.carboni.utils.FileHandle;
 
 public class BuildCsv {
 
-	public static String buildArray() throws Exception {
+	public static String buildArray(String path, String filename) throws Exception {
 
-		String path = Configuracao.path_monitora_disco;
-		String currentDate = DateFormat.FormatDate();
-		String filename = currentDate + Configuracao.filename;
-//		String header = "['Hora','Qt Arquivos', 'Qt bytes'],";
-		
-		
 		ArrayList<String> chartValues = FileHandle.readFileAsListOfStrings(path, filename);
 		
 		StringBuilder sb = new StringBuilder(); // better performance than a simple foreach because
