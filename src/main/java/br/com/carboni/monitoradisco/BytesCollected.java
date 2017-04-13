@@ -13,13 +13,11 @@ public class BytesCollected {
 	 * @return sum of total bytes collected
 	 */
 
-	public static String getAmountOfBytes() {
-
-		String fileJaBaixados = Configuracao.fileJaBaixados;
+	public static String getAmountOfBytes(String path_controle_coleta, String fileJaBaixados) {
 
 		ArrayList<String> lines = null;
 		try {
-			lines = FileHandle.readFileAsListOfStrings(Configuracao.path_controle_coleta, fileJaBaixados);
+			lines = FileHandle.readFileAsListOfStrings(path_controle_coleta, fileJaBaixados);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
