@@ -22,8 +22,9 @@ public class MonitoraDiscoController {
 		return "teste";
 	}
 	
-	@RequestMapping("/teste2")
-	public String teste2(Model model) throws Exception {
+	//@RequestMapping("/teste2")
+	@RequestMapping("/monitoradisco")
+	public String mondioraDisco(Model model) throws Exception {
 	    
 		String path = Configuracao.path_monitora_disco;
 		String fileName = DateFormat.FormatDate() + Configuracao.filename;
@@ -39,9 +40,9 @@ public class MonitoraDiscoController {
 		
 		model.addAttribute("chartValues",chartValues);
 		
-		System.out.println(chartValues);
+//		System.out.println(chartValues);
 		
-		return "teste2";
+		return "grafico";
 	}
 
 }

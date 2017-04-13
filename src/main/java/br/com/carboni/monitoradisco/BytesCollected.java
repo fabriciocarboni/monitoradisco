@@ -22,7 +22,7 @@ public class BytesCollected {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
 			System.out.println(" ==== >>> Arquivo "+ fileJaBaixados + " não encontrado");
-			System.out.println(Configuracao.path_controle_coleta + fileJaBaixados);
+			System.out.println(path_controle_coleta + fileJaBaixados);
 		}
 
 		List<Integer> total_size = new ArrayList<>(); // arraylist de inteiros
