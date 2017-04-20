@@ -9,8 +9,6 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
-import br.com.carboni.monitoradisco.DateFormat;
-import br.com.carboni.monitoradisco.Configuracao;
 
 public class FileHandle {
 
@@ -25,7 +23,7 @@ public class FileHandle {
 		return records;
 	}
 
-	public static void writeToFile(String path, String filename_formatted, String total_files, String total_files_size)
+/*	public static void writeToFile(String path, String filename_formatted, String total_files, String total_files_size)
 			throws IOException {
 
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
@@ -38,6 +36,6 @@ public class FileHandle {
 						+ System.getProperty("line.separator"));
 
 		}
-	}
+	}*/
 	
 }

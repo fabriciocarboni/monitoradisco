@@ -15,6 +15,8 @@ public class ConvertSize {
 		double t = ((((size / 1024.0) / 1024.0) / 1024.0) / 1024.0);
 
 		DecimalFormat dec = new DecimalFormat("0.00");
+		
+		hrSize = dec.format(g);
 
 /*		if (t > 1) {
 			hrSize = dec.format(t).concat("TB");
@@ -29,7 +31,7 @@ public class ConvertSize {
 		}
 */
 		
-		if (t > 1) {
+/*		if (t > 1) {
 			hrSize = dec.format(t);
 		} else if (g > 1) {
 			hrSize = dec.format(g);
@@ -40,7 +42,7 @@ public class ConvertSize {
 		} else {
 			hrSize = dec.format(b);
 		}
-		
+		*/
 		
 	
 		return hrSize;

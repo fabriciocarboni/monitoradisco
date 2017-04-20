@@ -15,7 +15,7 @@ public class BytesCollected {
 	 * @return sum of total bytes collected
 	 */
 
-	public static String getAmountOfBytes(String path_controle_coleta, String fileJaBaixados) {
+	public static String getAmtOfBytes(String fileJaBaixados) {
 
 		ArrayList<String> lines = null;
 		try {
@@ -23,8 +23,8 @@ public class BytesCollected {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
-			System.out.println(" ==== >>> Arquivo "+ fileJaBaixados + " n�o encontrado");
-			System.out.println(path_controle_coleta + fileJaBaixados);
+			System.out.println(" ==== >>> Arquivo "+ fileJaBaixados + " nao encontrado");
+			
 		}
 
 		List<Integer> total_size = new ArrayList<>(); // arraylist de inteiros
