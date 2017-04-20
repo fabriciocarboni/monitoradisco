@@ -14,9 +14,9 @@ import br.com.carboni.monitoradisco.Configuracao;
 
 public class FileHandle {
 
-	public static ArrayList<String> readFileAsListOfStrings(String path, String filename) throws Exception {
+	public static ArrayList<String> readFileAsListOfStrings(String fileJaBaixados) throws Exception {
 		ArrayList<String> records = new ArrayList<String>();
-		BufferedReader reader = new BufferedReader(new FileReader(path + "/" + filename));
+		BufferedReader reader = new BufferedReader(new FileReader(fileJaBaixados));
 		String line;
 		while ((line = reader.readLine()) != null) {
 			records.add(line);

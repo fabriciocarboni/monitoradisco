@@ -24,19 +24,20 @@ public class MonitoraDiscoController {
 	
 	//@RequestMapping("/teste2")
 	@RequestMapping("/monitoradisco")
-	public String mondioraDisco(Model model) throws Exception {
+	public String monitoraDisco(Model model) throws Exception {
 	    
-		String path = Configuracao.path_monitora_disco;
-		String fileName = DateFormat.FormatDate() + Configuracao.filename;
-		String amtofFilesInDir = AmtOfFilesInDir.getAmtOfFiles(path);
-		String fileJaBaixados = Configuracao.fileJaBaixados;
-		String totalFileSize = BytesCollected.getAmountOfBytes(path, fileJaBaixados);
+//		String path = Configuracao.path_monitora_disco;
+//		String fileName = DateFormat.FormatDate() + Configuracao.filename;
+//		String amtOfFilesInDir = AmtOfFilesInDir.getAmtOfFiles(path);
+//		String fileJaBaixados = Configuracao.fileJaBaixados;
+		String fileMonitoraDisco = Configuracao.fileMonitoraDisco;
+//		String totalFileSize = BytesCollected.getAmountOfBytes(path, fileJaBaixados);
 
-		// para colocar em produção, comentar esta linha.
-		// Deixar o jar atual gravar o arquivo _monitora_disco, pois este é a fonte de dados para o grafico
-		FileHandle.writeToFile(path, fileName, amtofFilesInDir, totalFileSize);
+		// para colocar em producao, comentar esta linha.
+		// Deixar o jar atual gravar o arquivo _monitora_disco, pois este e a fonte de dados para o grafico
+		//FileHandle.writeToFile(path, fileName, amtofFilesInDir, totalFileSize);
 		
-		String chartValues = BuildCsv.buildArray(path, fileName);
+		String chartValues = BuildCsv.buildArray(fileMonitoraDisco);
 		
 		model.addAttribute("chartValues",chartValues);
 		

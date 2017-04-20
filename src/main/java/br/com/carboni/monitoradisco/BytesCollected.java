@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.carboni.utils.FileHandle;
+import br.com.carboni.monitoradisco.ConvertSize;
+
 
 public class BytesCollected {
 
@@ -17,11 +19,11 @@ public class BytesCollected {
 
 		ArrayList<String> lines = null;
 		try {
-			lines = FileHandle.readFileAsListOfStrings(path_controle_coleta, fileJaBaixados);
+			lines = FileHandle.readFileAsListOfStrings(fileJaBaixados);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
-			System.out.println(" ==== >>> Arquivo "+ fileJaBaixados + " não encontrado");
+			System.out.println(" ==== >>> Arquivo "+ fileJaBaixados + " nï¿½o encontrado");
 			System.out.println(path_controle_coleta + fileJaBaixados);
 		}
 

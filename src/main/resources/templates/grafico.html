@@ -26,7 +26,7 @@
     	  
       data.addColumn('string', 'Hora');
       data.addColumn('number', 'Total de Arquivos não movidos');
-      data.addColumn('number', 'Total de Arquivos coletados');
+      //data.addColumn('number', 'Total de Arquivos coletados');
       //data.addColumn('number', 'Another column if needed');
 
 	  var arr = eval("[" + values + "]");
@@ -36,9 +36,9 @@
       var options = {
         chart: {
           title: 'Coleta - Consumo de dados - DPI',
-          subtitle: 'Arquivos em disco / Arquivos coletados '
+          subtitle: 'Arquivos em disco / Arquivos coletados'
         },
-        width: 1000,
+        width: 1280,
         height: 400,
         axes: {
           x: {

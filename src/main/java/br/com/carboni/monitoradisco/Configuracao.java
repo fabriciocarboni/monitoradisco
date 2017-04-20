@@ -3,14 +3,16 @@ package br.com.carboni.monitoradisco;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import br.com.carboni.monitoradisco.DateFormat;
+
 @SpringBootApplication
 public class Configuracao {
 	
 	 public static String path_monitora_disco = "/home/h_loadbd/MonitoraDiscoDPI/"; 
-	 public static String work_dir = "/data/stage/dpi_sig/Controles/Coleta/stage_tmp/"; 
-	 public static String filename = "_monitora_disco.txt"; 
-	 public static String path_controle_coleta = "/data/stage/dpi_sig/Controles/Coleta/";
-	 public static String fileJaBaixados = path_controle_coleta + "ja_baixados_" + DateFormat.FormatDate() + ".txt";
+//	 public static String work_dir = "/data/stage/dpi_sig/Controles/Coleta/stage_tmp/"; 
+	 public static String currentDate = DateFormat.FormatDate();
+	 public static String fileMonitoraDisco = path_monitora_disco + currentDate + "_monitora_disco.txt"; 
+	 public static String fileJaBaixados = "/data/stage/dpi_sig/Controles/Coleta/ja_baixados_" + currentDate + ".txt";
 	 
 
 /*	
