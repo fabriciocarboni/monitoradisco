@@ -1,33 +1,179 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="refresh" content="900" />
+  <title>DPI - Consumo de Dados</title>
+</head>
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
+<body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
+<div id="grafico_acumulado" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+<!-- <script type='text/javascript'> -->
+<script th:inline="javascript">
 
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
-  </body>
+/*<![CDATA[*/	  
+var categoryValuesAcum = eval("[" + [[${chartArqAcumuladosCategoriesValues}]] + "]");
+
+var values_coletora_10_81_40_4 = eval("[" + [[${values_coletora_10_81_40_4}]] + "]");
+var values_coletora_10_81_40_5 = eval("[" + [[${values_coletora_10_81_40_5}]] + "]");
+var values_coletora_10_81_40_6 = eval("[" + [[${values_coletora_10_81_40_6}]] + "]");
+var values_coletora_10_81_40_7 = eval("[" + [[${values_coletora_10_81_40_7}]] + "]");
+var values_coletora_10_81_40_8 = eval("[" + [[${values_coletora_10_81_40_8}]] + "]");
+var values_coletora_10_81_40_9 = eval("[" + [[${values_coletora_10_81_40_9}]] + "]");
+var values_coletora_10_81_40_10 = eval("[" + [[${values_coletora_10_81_40_10}]] + "]");
+var values_coletora_10_81_40_11 = eval("[" + [[${values_coletora_10_81_40_11}]] + "]");
+var values_coletora_10_81_40_12 = eval("[" + [[${values_coletora_10_81_40_12}]] + "]");
+
+
+/*]]>*/
+
+
+Highcharts.chart('grafico_acumulado', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'DPI - Consumo de Dados / Coleta'
+    },
+    subtitle: {
+        text: 'Arquivos acumulados nas coletoras para compactação'
+    },
+    xAxis: {
+            	
+              categories: categoryValuesAcum
+    },
+    yAxis: {
+        title: {
+            text: 'Qt de Arquivos'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: false
+            },
+            enableMouseTracking: true
+        }
+    },
+    series: [{
+	        name: '10.81.40.4',
+	        data: values_coletora_10_81_40_4
+        },
+    
+        {
+	        name: '10.81.40.5',
+	        data: values_coletora_10_81_40_4
+        },
+        
+        {
+	         name: '10.81.40.6',
+	         data: values_coletora_10_81_40_6
+        },        
+    
+        {
+			name: '10.81.40.7',
+			data: values_coletora_10_81_40_7
+        },
+        
+        {
+			name: '10.81.40.8',
+	    	data: values_coletora_10_81_40_8
+            },        
+    
+        {
+    		name: '10.81.40.9',
+    		data: values_coletora_10_81_40_9
+            },
+                
+        {
+    		name: '10.81.40.10',
+    		data: values_coletora_10_81_40_10
+            },                
+        {
+    		name: '10.81.40.11',
+    		data: values_coletora_10_81_40_11
+            },
+                        
+         {
+     		name: '10.81.40.12',
+     		data: values_coletora_10_81_40_12
+             }
+    ]
+});
+</script>
+
+<hr></hr>
+
+<table>
+
+	<tr>
+		<td><div id="donuts" style="min-width: 200; height: 400px; margin: 0 auto"></div>
+		<script th:inline="javascript">
+
+		<!-- Variaveis para grafico de arquivos acumulados-->
+		/*<![CDATA[*/	  
+		
+		/*]]>*/
+
+		Highcharts.chart('donuts', {
+		    chart: {
+		        plotBackgroundColor: null,
+		        plotBorderWidth: 0,
+		        plotShadow: false
+		    },
+		    title: {
+		        text: 'Total',
+		        align: 'center',
+		        verticalAlign: 'middle',
+		        y: 40
+		    },
+		    tooltip: {
+		        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		    },
+		    plotOptions: {
+		        pie: {
+		            dataLabels: {
+		                enabled: true,
+		                distance: -50,
+		                style: {
+		                    fontWeight: 'bold',
+		                    color: 'white'
+		                }
+		            },
+		            startAngle: -90,
+		            endAngle: 90,
+		            center: ['50%', '75%']
+		        }
+		    },
+		    series: [{
+		        type: 'pie',
+		        name: 'Arquivos Coletados',
+		        innerSize: '50%',
+		        data: [
+		            ['Other',   10.38],
+		            ['Http',       56.33],
+		            ['Ftp', 24.03]
+		        ]
+		    }]
+		});
+
+
+</script>
+</td>
+		<td align="center"><h1>.</h1></td>
+	</tr>
+		
+
+
+</table>
+
+
+
+
+</body>
+
 </html>

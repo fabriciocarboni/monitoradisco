@@ -1,12 +1,9 @@
 package br.com.carboni.utils;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 
@@ -37,5 +34,14 @@ public class FileHandle {
 
 		}
 	}*/
+	
+	
+	public static String readFileAsString(String file) throws Exception {
+		
+		String line = new String(Files.readAllBytes(Paths.get(file)));
+		
+		return line;
+	}
+		
 	
 }

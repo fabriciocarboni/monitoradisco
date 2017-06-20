@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="refresh" content="900" />
   <title>DPI - Consumo de Dados</title>
+
+
+<style>
+h2 { color: #808080; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; font-weight: 700; line-height: 48px; margin: 0 0 24px; padding: 0 30px; text-align: center; text-transform: uppercase; }
+</style>
 </head>
 
 <body>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="grafico_arquivos_em_disco" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <!-- <script type='text/javascript'> -->
 <script th:inline="javascript">
 
 /*<![CDATA[*/	  
-//var values = [[${chartCategoriesValues}]];
 var categoryValues = eval("[" + [[${chartCategoriesValues}]] + "]");
-var amtOfFilesValues = eval("[" + [[${chartAmtOfFilesValues}]] + "]");
-var totalFileSizeValues = eval("[" + [[${chartTotalFileSizeValues}]] + "]");
+
+var amtOfFilesValues_324pl = eval("[" + [[${chartAmtOfFilesValues_324pl}]] + "]");
+var amtOfFilesValues_325pl = eval("[" + [[${chartAmtOfFilesValues_325pl}]] + "]");
+
 /*]]>*/
 
 
-Highcharts.chart('container', {
+Highcharts.chart('grafico_arquivos_em_disco', {
     chart: {
         type: 'line'
     },
     title: {
-        text: 'DPI - Consumo de Dados'
+        text: 'DPI - Consumo de Dados / Coleta'
     },
     subtitle: {
-        text: 'Coleta de arquivos'
+        text: 'Arquivos acumulados em disco a mover para HDFS'
     },
     xAxis: {
             	
@@ -44,25 +52,188 @@ Highcharts.chart('container', {
     plotOptions: {
         line: {
             dataLabels: {
-                enabled: true
+                enabled: false
             },
             enableMouseTracking: true
         }
     },
     series: [{
-        name: 'Arquivos em disco',
-        data: amtOfFilesValues
-    } //, {
-    //    name: 'Arquivos coletados (MB)',
-    //    data: [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,118,120,122,124,126,128,130,132,134,136,138,140,142,144,146,148,150,152,154,156,158,160,162,164,166,168,170,172,174,176,178,180,182,184,186]
-    	//data: totalFileSizeValues
-    //}
+        name: 'brtlvlts0324pl',
+        data: amtOfFilesValues_324pl
+    }, {
+        name: 'brtlvlts0325pl',
+    	data: amtOfFilesValues_325pl
+    }
     ]
 });
-
-
 </script>
- 
+
+<hr></hr>
+
+<div id="grafico_arquivos_acumulados" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script th:inline="javascript">
+
+<!-- Variaveis para grafico de arquivos acumulados-->
+/*<![CDATA[*/	  
+var categoryValuesAcum = eval("[" + [[${chartArqAcumuladosCategoriesValues}]] + "]");
+
+var values_coletora_10_81_40_4 = eval("[" + [[${values_coletora_10_81_40_4}]] + "]");
+var values_coletora_10_81_40_5 = eval("[" + [[${values_coletora_10_81_40_5}]] + "]");
+var values_coletora_10_81_40_6 = eval("[" + [[${values_coletora_10_81_40_6}]] + "]");
+var values_coletora_10_81_40_7 = eval("[" + [[${values_coletora_10_81_40_7}]] + "]");
+var values_coletora_10_81_40_8 = eval("[" + [[${values_coletora_10_81_40_8}]] + "]");
+var values_coletora_10_81_40_9 = eval("[" + [[${values_coletora_10_81_40_9}]] + "]");
+var values_coletora_10_81_40_10 = eval("[" + [[${values_coletora_10_81_40_10}]] + "]");
+var values_coletora_10_81_40_11 = eval("[" + [[${values_coletora_10_81_40_11}]] + "]");
+var values_coletora_10_81_40_12 = eval("[" + [[${values_coletora_10_81_40_12}]] + "]");
+/*]]>*/
+
+Highcharts.chart('grafico_arquivos_acumulados', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'DPI - Consumo de Dados / Coleta'
+    },
+    subtitle: {
+        text: 'Arquivos acumulados nas coletoras para compactação'
+    },
+    xAxis: {
+            	
+              categories: categoryValuesAcum
+    },
+    yAxis: {
+        title: {
+            text: 'Qt de Arquivos'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: false
+            },
+            enableMouseTracking: true
+        }
+    },
+    series: [{
+	        name: '10.81.40.4',
+	        data: values_coletora_10_81_40_4
+        },
+    
+        {
+	        name: '10.81.40.5',
+	        data: values_coletora_10_81_40_4
+        },
+        
+        {
+	         name: '10.81.40.6',
+	         data: values_coletora_10_81_40_6
+        },        
+    
+        {
+			name: '10.81.40.7',
+			data: values_coletora_10_81_40_7
+        },
+        
+        {
+			name: '10.81.40.8',
+	    	data: values_coletora_10_81_40_8
+            },        
+    
+        {
+    		name: '10.81.40.9',
+    		data: values_coletora_10_81_40_9
+            },
+                
+        {
+    		name: '10.81.40.10',
+    		data: values_coletora_10_81_40_10
+            },                
+        {
+    		name: '10.81.40.11',
+    		data: values_coletora_10_81_40_11
+            },
+                        
+         {
+     		name: '10.81.40.12',
+     		data: values_coletora_10_81_40_12
+             }
+    ]
+});
+</script>
+
+<hr></hr>
+
+<table border="0" align="center">
+
+	<tr>
+		<td><div id="donuts" style="min-width: 200; height: 400px; margin: 0 auto"></div>
+			<script th:inline="javascript">
+	
+				<!-- Variaveis para grafico de arquivos acumulados-->
+				/*<![CDATA[*/	  
+				
+				/*]]>*/
+		
+				Highcharts.chart('donuts', {
+				    chart: {
+				        plotBackgroundColor: null,
+				        plotBorderWidth: 0,
+				        plotShadow: false
+				    },
+				    title: {
+				        text: 'Total',
+				        align: 'center',
+				        verticalAlign: 'middle',
+				        y: 40
+				    },
+				    tooltip: {
+				        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				    },
+				    plotOptions: {
+				        pie: {
+				            dataLabels: {
+				                enabled: true,
+				                distance: -50,
+				                style: {
+				                    fontWeight: 'bold',
+				                    color: 'white'
+				                }
+				            },
+				            startAngle: -90,
+				            endAngle: 90,
+				            center: ['50%', '75%']
+				        }
+				    },
+				    series: [{
+				        type: 'pie',
+				        name: 'Arquivos Coletados',
+				        innerSize: '50%',
+				        data: [
+				            ['Other',   50.00],
+				            ['Http',       25.00],
+				            ['Ftp', 10.00],
+				            ['wap', 15.00]
+				        ]
+				    }]
+				});
+			</script>
+		</td>
+
+		<td>
+			
+			<h2 th:text="${brtlvlts0324pl_value}"></h2>
+			<h2 th:text="${brtlvlts0325pl_value}"></h2>
+
+		
+		</td>
+	</tr>
+</table>
+
+
+
+
 </body>
 
 </html>
