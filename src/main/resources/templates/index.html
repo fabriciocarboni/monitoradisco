@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="refresh" content="900" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+
   <title>DPI - Consumo de Dados</title>
-
-
-<style>
-h2 { color: #808080; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; font-weight: 700; line-height: 48px; margin: 0 0 24px; padding: 0 30px; text-align: center; text-transform: uppercase; }
-</style>
 </head>
 
 <body>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<header layout:include="cabecalho"></header>
+
+<script src="/js/highcharts/highcharts.js"></script>
+<script src="/js/highcharts/exporting.js"></script>
+
+
+<!-- menu dropdown -->
+<!-- <div layout:include="menuDropDown"></div>-->
 
 <div id="grafico_arquivos_em_disco" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
